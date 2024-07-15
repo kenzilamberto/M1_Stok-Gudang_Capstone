@@ -1,4 +1,4 @@
-An Elementary CRUD Database Application for Warehouse Stock Items
+An Elementary CRUD Database Application for Warehouse Stock Items  
 The array used is a list of dictionaries!
 
 The program contains 6 menus which are:  
