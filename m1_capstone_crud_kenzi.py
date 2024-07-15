@@ -15,11 +15,11 @@ Original file is located at
 from tabulate import tabulate
 
 # database awalnya
- gudang_db = [
-     {"Kode": "INTC1", "Merek" : "Intel", "Tipe" : "CPU", "Nama" : "i7", "Harga" : 250000, "Stok": 1},
-     {"Kode": "INTC2", "Merek" : "Intel", "Tipe" : "CPU", "Nama" : "i5", "Harga" : 200000, "Stok": 5},
-     {"Kode": "AMDG3", "Merek" : "AMD", "Tipe" : "GPU", "Nama" : "Radeon 7", "Harga" : 270000, "Stok": 3},
-     {"Kode": "AMDC4", "Merek" : "AMD", "Tipe" : "CPU", "Nama" : "Ryzen 5", "Harga" : 180000, "Stok": 0}
+gudang_db = [
+    {"Kode": "INTC1", "Merek" : "Intel", "Tipe" : "CPU", "Nama" : "i7", "Harga" : 250000, "Stok": 1},
+    {"Kode": "INTC2", "Merek" : "Intel", "Tipe" : "CPU", "Nama" : "i5", "Harga" : 200000, "Stok": 5},
+    {"Kode": "AMDG3", "Merek" : "AMD", "Tipe" : "GPU", "Nama" : "Radeon 7", "Harga" : 270000, "Stok": 3},
+    {"Kode": "AMDC4", "Merek" : "AMD", "Tipe" : "CPU", "Nama" : "Ryzen 5", "Harga" : 180000, "Stok": 0}
  ]
 
 
