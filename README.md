@@ -4,11 +4,11 @@ The array used is a list of dictionaries!
 
 ## Data Description
 1. **Kode** : An alphanumeric representing the unique code for each stock
-2. **Nama** : A string representing the name of the employee
-3. **Divisi** : A string representing the division where the employee works
-4. **Level** : A string representing the employee's level or position
-5. **Kota** : A string representing the city where the employee is located
-6. **Email** : A string representing the employee's email, which must follow the format 'name@xyzcompany.com'
+2. **Merek** : A string representing the product brand 
+3. **Tipe** : A string representing the product type 
+4. **Nama** : A string representing the product name
+5. **Harga** : An integer representing the product price
+6. **Stok** : An integer representing the product stock
 
 ## Menu Features
 The program contains 6 menus which are:  
