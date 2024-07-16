@@ -11,7 +11,8 @@ Original file is located at
 # Kenzi Lamberto
 # Data Stok Gudang
 
-#!pip install tabulate
+# import sys
+# !{sys.executable} -m pip install tabulate
 from tabulate import tabulate
 
 # database awalnya
@@ -20,7 +21,7 @@ gudang_db = [
     {"Kode": "INTC2", "Merek" : "Intel", "Tipe" : "CPU", "Nama" : "i5", "Harga" : 200000, "Stok": 5},
     {"Kode": "AMDG3", "Merek" : "AMD", "Tipe" : "GPU", "Nama" : "Radeon 7", "Harga" : 270000, "Stok": 3},
     {"Kode": "AMDC4", "Merek" : "AMD", "Tipe" : "CPU", "Nama" : "Ryzen 5", "Harga" : 180000, "Stok": 0}
- ]
+]
 
 
 # =========================================================================================
@@ -170,7 +171,7 @@ def input_stock_amount():
 # Auto buat ID-nya
 def auto_stock_id(stock_brand, stock_type):
     global gudang_db
-    stock_id = stock_brand[0:3].upper() + str(stock_type[0]) + str(len(gudang_db))
+    stock_id = stock_brand[0:3].upper() + str(stock_type[0]) + str(len(gudang_db)+1)
     return stock_id
 
 # =========================================================================================
@@ -217,13 +218,13 @@ def input_update():
 def update_stock_info(list_id_stock, input_id, input_column_name):
     new_value = input(f"Input value baru dari ID {input_id} pada kolom {input_column_name}: ")
     if input_column_name == "Harga":
-        input_column_name = int(input_column_name)
+        new_value = int(new_value)
         while new_value <= 0:
             print(f"\n Value dari kolom {input_column_name} tidak boleh 0 ataupun negatif")
             new_value = input(f"Input value baru dari ID {input_id} pada kolom {input_column_name}: ")
 
     elif input_column_name == "Stok":
-        input_column_name = int(input_column_name)
+        new_value = int(new_value)
         while new_value < 0:
             print(f"\n(INFO) Value dari kolom {input_column_name} tidak boleh negatif")
             new_value = input(f"Input value baru dari ID {input_id} pada kolom {input_column_name}: ")
@@ -246,7 +247,7 @@ def update_stock_info(list_id_stock, input_id, input_column_name):
             gudang_db[input_id_index]["Kode"] = new_input_id
 
         else:
-            gudang_db[input_id][input_column_name] = new_value
+            gudang_db[input_id_index][input_column_name] = new_value
 
         continue_or_no()
 
@@ -309,8 +310,10 @@ def menu_restock():
     for i in gudang_db:
         if i["Stok"] == 0:
             need_restock.append(i)
-    print("Berikut List Barang yang perlu direstock segera")
+    print("Berikut List Barang yang perlu direstock segera!")
     print(tabulate(need_restock,headers = 'keys', tablefmt = 'pretty'))
+
+    main_menu()
 
 
 # =========================================================================================
